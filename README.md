@@ -2,12 +2,12 @@
 
 ## INSTRUCTIONS
 
-Click the download icon on this page: https://github.com/PissMidas/AwakeningTrackerApp/blob/main/Awakening%20Tracker.zip
+Click the download button on this page: https://github.com/PissMidas/AwakeningTrackerApp/blob/main/Awakening%20Tracker.zip (download button is on the far right of the page)
 
 
 Extract the file you downloaded
 
-after extraction, navigate to the extracted files. double click "Awakening Tracker" . The app will run as long as omega strikers is also running.
+after extraction, navigate to the extracted files. double click "Awakening Tracker". The app will run as long as omega strikers is also running.
 
 No installation required!
 
