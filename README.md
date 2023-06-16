@@ -16,4 +16,5 @@ if you need technical help, please go to https://discord.com/channels/7804704260
 
 ### Version history
 6/15/2023 v0.0.1 release!
+
 6/16/2023 v0.0.2 fixed edge case async behavior conflicting with each other. (gui and game event observer startup were overlapping/conflicting)
