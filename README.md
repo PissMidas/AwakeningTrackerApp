@@ -2,10 +2,11 @@
 
 ## INSTRUCTIONS
 
-Click the download button on this page: https://github.com/PissMidas/AwakeningTrackerApp/blob/main/Awakening%20Tracker.zip (download button is on the far right of the page)
+Clicking this link will automatically download this project: https://github.com/PissMidas/AwakeningTrackerApp/archive/refs/heads/main.zip
 
 
-Extract the file you downloaded
+
+Extract the file that was downloaded.
 
 after extraction, navigate to the extracted files. double click "Awakening Tracker". The app will run as long as omega strikers is also running.
 
@@ -18,3 +19,5 @@ if you need technical help, please go to https://discord.com/channels/7804704260
 6/15/2023 v0.0.1 release!
 
 6/16/2023 v0.0.2 fixed edge case async behavior conflicting with each other. (gui and game event observer startup were overlapping/conflicting)
+
+6/16/2023 v0.0.3 app is no longer compressed. compression is a common technique for viruses to infiltrate and obfuscate themselves. antivirus scans should have an easier time analyzing this app (and no longer triggering a false positive).
