@@ -26,3 +26,6 @@ if you need technical help, please go to https://discord.com/channels/7804704260
 
 9/7/2023 v0.0.5 Micropatch! Rotated Out: Orbs (Orb Dancer, Orb Ponderer, Orb Replicator) and Glass Cannon
 ROTATED IN: Sparkington City (Spark of Strength, Spark of Agility, Spark of Focus, Spark of Resilience)
+
+10/19/2023 v0.0.6 Patch. Rotated Out: Catalyst, Fire Up!, Rapid Fire
+Rotated in: Fight or Flight, Knife's Edge, Demolitionist
