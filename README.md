@@ -29,3 +29,6 @@ ROTATED IN: Sparkington City (Spark of Strength, Spark of Agility, Spark of Focu
 
 10/19/2023 v0.0.6 Patch. Rotated Out: Catalyst, Fire Up!, Rapid Fire
 Rotated in: Fight or Flight, Knife's Edge, Demolitionist
+
+10/19/2023 v0.0.6 Micropatch! Rotated Out: Demolitionist
+Rotated in: Glass Cannon
