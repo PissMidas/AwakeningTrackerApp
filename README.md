@@ -32,3 +32,7 @@ Rotated in: Fight or Flight, Knife's Edge, Demolitionist
 
 10/19/2023 v0.0.7 Micropatch! Rotated Out: Demolitionist
 Rotated in: Glass Cannon
+
+11/16/2023 v0.0.8 Micropatch! Rotated out: Tempo Swing, Bulk up, Reverberation
+Rotated in: Orb Dancer, Orb Ponderer, Orb Replicator
+Also started to use the 'releases' page of github to release the executable. nothing has changed significantly, just follow the instructions at the top of this readme.
