@@ -2,7 +2,7 @@
 
 ## INSTRUCTIONS
 
-Clicking this link to see the latest release of the executable. choose to download the exe directly, or a compressed file: 
+Clicking this link to see the latest release of the executable. just download the executable. the compressed files won't give you what you want: 
 https://github.com/PissMidas/AwakeningTrackerApp/releases
 
 
