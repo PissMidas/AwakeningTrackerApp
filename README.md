@@ -2,13 +2,9 @@
 
 ## INSTRUCTIONS
 
-Clicking this link will automatically download this project: https://github.com/PissMidas/AwakeningTrackerApp/archive/refs/heads/main.zip
+Clicking this link to see the latest release of the executable. choose to download the exe directly, or a compressed file: 
+https://github.com/PissMidas/AwakeningTrackerApp/releases
 
-
-
-Extract the file that was downloaded.
-
-after extraction, navigate to the extracted files. double click "Awakening Tracker". The app will run as long as omega strikers is also running.
 
 No installation required!
 
