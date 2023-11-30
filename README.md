@@ -33,3 +33,6 @@ Rotated in: Glass Cannon
 Rotated in: Orb Dancer, Orb Ponderer, Orb Replicator
 
 Also started to use the 'releases' page of github to release the executable. nothing has changed significantly, just follow the instructions at the top of this readme.
+
+11/30/2023 v0.0.9 Patch. Rotated out: Orb Ponderer, Orb Dancer,  Orb Replicator, Stacks on Stacks 
+Rotated in: Among Titans, Team Player, Spark of Leadership, Demolitionist
