@@ -36,3 +36,6 @@ Also started to use the 'releases' page of github to release the executable. not
 
 11/30/2023 v0.0.9 Patch. Rotated out: Orb Ponderer, Orb Dancer,  Orb Replicator, Stacks on Stacks 
 Rotated in: Among Titans, Team Player, Spark of Leadership, Demolitionist
+
+11/30/2023 v0.0.10 Patch. Rotated out: Spark of Leadership
+Rotated in: Reverberation
