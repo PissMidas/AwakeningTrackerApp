@@ -39,3 +39,6 @@ Rotated in: Among Titans, Team Player, Spark of Leadership, Demolitionist
 
 11/30/2023 v0.0.10 Patch. Rotated out: Spark of Leadership
 Rotated in: Reverberation
+
+11/30/2023 v0.0.11 Micropatch. Rotated out: Perfect Form
+Rotated in: Rapid Fire
