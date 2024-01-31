@@ -1,15 +1,37 @@
 # AwakeningTrackerApp
 
-## INSTRUCTIONS
+## INSTRUCTIONS FOR THE GENERAL PUBLIC
 
-Clicking this link to see the latest release of the executable. just download the executable. the compressed files won't give you what you want: 
+Clicking this link to see the latest release of the executable. just download the executable (it's named 'AwakeningTracker.exe'). the compressed files won't give you what you want.
 https://github.com/PissMidas/AwakeningTrackerApp/releases
 
+if you need technical help, please go to https://discord.com/channels/780470426010255380/1119008450689634346/1119008450689634346 which is a post in the main omega strikers discord.
 
 No installation required!
 
+## INSTRUCTIONS FOR PEOPLE WHO WANT TO COMPILE OR DEVELOP THIS REPO
+these instructions are for either:
 
-if you need technical help, please go to https://discord.com/channels/780470426010255380/1119008450689634346/1119008450689634346 which is a post in the main omega strikers discord.
+-you are interested in building and compiling the files yourself (security concerns)
+
+-developing the app further
+
+-looking at the source code for a similar personal project.
+
+-etc.
+
+1. download this repo (the 'images' folder, and the file 'tk.py'. keep the structure the same as you see it in this repo)
+2. pip install the relevant libraries (whatever warnings that pop up)
+3. go to your local folder via the command prompt. if you do not want to compile, then simply type 'python tk.py' and press enter.
+4. if you want to compile the app into a single executable file, type
+   
+   pyinstaller --onefile --icon=images/dubu.ico --add-data "images;images" --noconsole --name "AwakeningTracker" tk.py
+
+   and then press enter.
+6. i recommend disabling the 'check if omega strikers is open' code if you want to test simple changes.
+
+## IF YOU WANT TO USE THIS REPO FOR YOUR OWN APP OR PROJECT
+i love hearing about new projects in omega strikers. dm me, I'd love to hear about your app, even if it's just in the planning stages! If you feel like it, ask me for permission. As a disclaimer, I'd like to explicitly state that... if you try to make an application that is 'nefarious' (ex against the spirit of competition, something the ody devs would strongly disapprove of, etc.) then you do not have my permission/blessing to use this repo. (but tbh i struggle to think of anything thats possible like that).
 
 ### Version history
 6/15/2023 v0.0.1 release!
