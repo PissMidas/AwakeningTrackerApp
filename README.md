@@ -30,8 +30,7 @@ these instructions are for either:
    and then press enter.
 6. i recommend disabling the 'check if omega strikers is open' code if you want to test simple changes.
 
-## IF YOU WANT TO USE THIS REPO FOR YOUR OWN APP OR PROJECT
-i love hearing about new projects in omega strikers. dm me, I'd love to hear about your app, even if it's just in the planning stages! If you feel like it, ask me for permission. As a disclaimer, I'd like to explicitly state that... if you try to make an application that is 'nefarious' (ex against the spirit of competition, something the ody devs would strongly disapprove of, etc.) then you do not have my permission/blessing to use this repo. (but tbh i struggle to think of anything thats possible like that).
+If you are trying to develop software to be used alongside the game, dm me. I love hearing about new projects, even if it's just in the planning stages!
 
 ### Version history
 6/15/2023 v0.0.1 release!
