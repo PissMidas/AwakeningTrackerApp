@@ -58,7 +58,7 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.11") #v0.0.11 12/15/2023
+        self.title("AwakeningTracker v0.0.12") #v0.0.12 2/14/2024
         #'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingSpeed',
         #TD_ComboATarget, TD_HitsReduceCooldowns TD_IncreasedSpeedWithStagger, TD_KOKing,
 
@@ -114,7 +114,24 @@ class MainWindow(tk.Tk):
         # 'TD_PrimaryAbilityCooldownReduction'
         # Rapid Fire
 
-        self.master_copy_deck = [ 'TD_AvoidDamageHitHarder', 'TD_BarrierBuff', 'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingSpeed', 'TD_BuffAndDebuffDuration', 'TD_ComboATarget', 'TD_CreationSize', 'TD_CreationSizeLifeTime', 'TD_DistancePower', 'TD_EdgePower', 'TD_EmpoweredHitsBuff', 'TD_EnergyConversion', 'TD_FasterDashes', 'TD_FasterDashes2', 'TD_FasterProjectiles', 'TD_FasterProjectiles2', 'TD_HitRockCooldown', 'TD_HitSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_KOKing', 'TD_MovementAbilityCharges', 'TD_MultiHitsReduceCooldowns', 'TD_PrimaryAbilityCooldownReduction', 'TD_PrimaryEcho', 'TD_ShrinkSelfGrowAllies', 'TD_SizeIncrease', 'TD_SizeIncrease2', 'TD_SpecialCooldownAfterRounds', 'TD_StaggerCooldownRateConversion', 'TD_StaggerSpeedConversion', 'TD_StrikeCooldownReduction', 'TD_StrikeRockTowardsAllies']
+
+        #rotated out 2/14/2024
+        #Super Surge #TD_FasterDashes
+        #Big Fish TD_SizeIncrease2
+        #Peak Performance TD_StaggerSpeedConversion
+        #Reverberation TD_StaggerCooldownRateConversion
+        #Egoist TD_EnergyConversion
+
+        #rotated in 2/14/2023
+        # Spark of Leadership TD_BlessingShare
+        # Recovery Drone TD_Revive
+        # Explosive Entrance TD_FasterDashes3
+        # Siege Machine TD_FasterProjectiles3
+        # Unstoppable (formerly TD_IncreasedPowerWithMaxStagger) TD_ResistFirstHit
+
+
+
+        self.master_copy_deck = [ 'TD_AvoidDamageHitHarder', 'TD_BarrierBuff', 'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_BuffAndDebuffDuration', 'TD_ComboATarget', 'TD_CreationSize', 'TD_CreationSizeLifeTime', 'TD_DistancePower', 'TD_EdgePower', 'TD_EmpoweredHitsBuff', 'TD_FasterDashes2', 'TD_FasterDashes3', 'TD_FasterProjectiles', 'TD_FasterProjectiles2', 'TD_FasterProjectiles3', 'TD_HitRockCooldown', 'TD_HitSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_KOKing', 'TD_MovementAbilityCharges', 'TD_MultiHitsReduceCooldowns', 'TD_PrimaryAbilityCooldownReduction', 'TD_PrimaryEcho', 'TD_ResistFirstHit', 'TD_Revive', 'TD_ShrinkSelfGrowAllies', 'TD_SizeIncrease', 'TD_SpecialCooldownAfterRounds', 'TD_StrikeCooldownReduction', 'TD_StrikeRockTowardsAllies']
 
 
         self.hidden_deck = self.master_copy_deck.copy()
