@@ -64,7 +64,7 @@ Rotated in: Reverberation
 12/15/2023 v0.0.11 Micropatch. Rotated out: Perfect Form
 Rotated in: Rapid Fire
 
-2/14/2023 v0.0.12 Micropatch. Rotated out: Super Surge, Big Fish, Peak Performance, Reverberation, Egoist
+2/14/2023 v0.0.12 Patch. Rotated out: Super Surge, Big Fish, Peak Performance, Reverberation, Egoist
 Rotated in: Spark of Leadership, Recovery Drone, Explosive Entrance, Siege Machine, Unstoppable
 
 
