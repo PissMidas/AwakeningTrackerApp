@@ -64,9 +64,9 @@ Rotated in: Reverberation
 12/15/2023 v0.0.11 Micropatch. Rotated out: Perfect Form
 Rotated in: Rapid Fire
 
-2/14/2023 v0.0.12 Patch. Rotated out: Super Surge, Big Fish, Peak Performance, Reverberation, Egoist
+2/14/2024 v0.0.12 Patch. Rotated out: Super Surge, Big Fish, Peak Performance, Reverberation, Egoist
 Rotated in: Spark of Leadership, Recovery Drone, Explosive Entrance, Siege Machine, Unstoppable
 
 
-4/12/2023 v0.0.13 Patch. Rotated out: Spark of Strength, Spark of Agility, Spark of Focus, Spark of Resilience, Spark of Leadership, Built Different, Stagger Swagger, Fight or Flight, Glass Cannon
+4/12/2024 v0.0.13 Patch. Rotated out: Spark of Strength, Spark of Agility, Spark of Focus, Spark of Resilience, Spark of Leadership, Built Different, Stagger Swagger, Fight or Flight, Glass Cannon
 Rotated in: Reptile Remedy, Might of the Colossus, Rampage, Stinger, Adrenaline Rush, Stacks on Stacks, Peak Performance, Bulk Up, Reverberation
