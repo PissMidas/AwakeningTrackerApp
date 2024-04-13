@@ -13,8 +13,6 @@ from PIL import Image, ImageTk
 #command line to compile
 
 
-
-
 def resourcePath(relativePath):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -58,80 +56,16 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.12") #v0.0.12 2/14/2024
-        #'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingSpeed',
-        #TD_ComboATarget, TD_HitsReduceCooldowns TD_IncreasedSpeedWithStagger, TD_KOKing,
-
-
-        #'TD_AvoidDamageHitHarder', ... 'TD_EnhancedOrbsCooldown', 'TD_EnhancedOrbsSpeed'  ... 'TD_OrbShare',
-        #glass cannon, orb awakenings
-
-        #rotated out 10/19/2023  'TD_EnergyCatalyst', ... 'TD_EnergyDischarge', 'TD_PrimaryAbilityCooldownReduction'
-        #catalyst, fire up, rapid fire
-
-        #rotated in 10/19/2023
-        #'TD_HitSpeed' TD_BarrierBuff' 'TD_EdgePower'
-        #Fight Or Flight, Demolitionist, Knife's Edge
-
-        #rotated out 11/2/2023  'TD_BarrierBuff'
-        #demolitionist
-
-        #rotated in 11/2/2023
-        #'TD_AvoidDamageHitHarder'
-        #glass cannon
-
-
-        #rotated out 11/16/2023  'TD_HitAnythingRestoreStagger', 'TD_StaggerPowerConversion' ,'TD_StaggerCooldownRateConversion'
-        #Tempo Swing, Bulk up, Reverberation
-
-        #rotated in 11/16/2023
-        #'TD_EnhancedOrbsCooldown', 'TD_EnhancedOrbsSpeed','TD_OrbShare'
-        # Orb Dancer, Orb Ponderer, Orb Replicator
-
-
-        #rotated out 11/30/2023  #'TD_EnhancedOrbsCooldown', 'TD_EnhancedOrbsSpeed','TD_OrbShare', 'TD_HitsIncreaseSpeedAndPower' #done
-        #Orb Ponderer, Orb Dancer,  Orb Replicator, Stacks on Stacks
-
-        #rotated in 11/30/2023
-        # 'TD_ShrinkSelfGrowAllies', 'TD_StrikeRockTowardsAllies', 'TD_BlessingShare', 'TD_BarrierBuff' #done
-        # Among Titans, Team Player, Spark of Leadership, Demolitionist
-
-
-        #EMERGENCY MICROPATCH
-        #rotated out 11/30/2023  #'TD_BlessingShare' done
-        #Spark of leadership
-
-        #rotated in 11/30/2023
-        # 'TD_StaggerCooldownRateConversion'
-        # Reverberation
-
-
-        #rotated out 12/15/2023
-        #'TD_HitsReduceCooldowns'
-        #Perfect Form
-
-        #rotated in 12/15/2023
-        # 'TD_PrimaryAbilityCooldownReduction'
-        # Rapid Fire
-
-
-        #rotated out 2/14/2024
-        #Super Surge #TD_FasterDashes
-        #Big Fish TD_SizeIncrease2
-        #Peak Performance TD_StaggerSpeedConversion
-        #Reverberation TD_StaggerCooldownRateConversion
-        #Egoist TD_EnergyConversion
-
-        #rotated in 2/14/2023
-        # Spark of Leadership TD_BlessingShare
-        # Recovery Drone TD_Revive
-        # Explosive Entrance TD_FasterDashes3
-        # Siege Machine TD_FasterProjectiles3
-        # Unstoppable (formerly TD_IncreasedPowerWithMaxStagger) TD_ResistFirstHit
+        self.title("AwakeningTracker v0.0.13") #v0.0.13 4/12/2024
 
 
 
-        self.master_copy_deck = [ 'TD_AvoidDamageHitHarder', 'TD_BarrierBuff', 'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_BuffAndDebuffDuration', 'TD_ComboATarget', 'TD_CreationSize', 'TD_CreationSizeLifeTime', 'TD_DistancePower', 'TD_EdgePower', 'TD_EmpoweredHitsBuff', 'TD_FasterDashes2', 'TD_FasterDashes3', 'TD_FasterProjectiles', 'TD_FasterProjectiles2', 'TD_FasterProjectiles3', 'TD_HitRockCooldown', 'TD_HitSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_KOKing', 'TD_MovementAbilityCharges', 'TD_MultiHitsReduceCooldowns', 'TD_PrimaryAbilityCooldownReduction', 'TD_PrimaryEcho', 'TD_ResistFirstHit', 'TD_Revive', 'TD_ShrinkSelfGrowAllies', 'TD_SizeIncrease', 'TD_SpecialCooldownAfterRounds', 'TD_StrikeCooldownReduction', 'TD_StrikeRockTowardsAllies']
+        self.master_copy_deck = ['TD_AvoidDamageHitHarder', 'TD_BarrierBuff', 'TD_BaseStaggerAndRegen', 'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_BuffAndDebuffDuration', 'TD_ComboATarget', 'TD_CreationSize', 'TD_CreationSizeLifeTime', 'TD_DistancePower', 'TD_EdgePower', 'TD_EmpoweredHitsBuff', 'TD_EnergyCatalyst', 'TD_EnergyConversion', 'TD_EnergyDischarge', 'TD_EnhancedOrbsCooldown', 'TD_EnhancedOrbsSpeed', 'TD_FasterDashes', 'TD_FasterDashes2', 'TD_FasterDashes3', 'TD_FasterProjectiles', 'TD_FasterProjectiles2', 'TD_FasterProjectiles3', 'TD_HitAnythingRestoreStagger', 'TD_HitEnemyBurnThem', 'TD_HitRockCooldown', 'TD_HitsIncreaseSpeedAndPower', 'TD_HitSpeed', 'TD_HitsReduceCooldowns', 'TD_IncreasedSpeedWithStagger', 'TD_KOKing', 'TD_MovementAbilityCharges', 'TD_MultiHitsReduceCooldowns', 'TD_OrbShare', 'TD_PrimaryAbilityCooldownReduction', 'TD_PrimaryEcho', 'TD_ResistFirstHit', 'TD_Revive', 'TD_ShrinkSelfGrowAllies', 'TD_SizeIncrease', 'TD_SizeIncrease2', 'TD_SizePowerConversion', 'TD_SpecialCooldownAfterRounds', 'TD_StackingSize', 'TD_StaggerCooldownRateConversion', 'TD_StaggerPowerConversion', 'TD_StaggerSpeedConversion', 'TD_StrikeCooldownReduction', 'TD_StrikeRockTowardsAllies', 'TD_TakeDownReduceCooldowns']
+        # List of items to remove
+        items_to_remove = ['TD_AvoidDamageHitHarder', 'TD_SizeIncrease2', 'TD_SizeIncrease', 'TD_EnergyCatalyst', 'TD_EnergyConversion', 'TD_HitSpeed', 'TD_EnergyDischarge', 'TD_EnhancedOrbsSpeed', 'TD_EnhancedOrbsCooldown', 'TD_OrbShare','TD_HitsReduceCooldowns','TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_FasterDashes', 'TD_HitAnythingRestoreStagger']
+
+    # Remove items from self.master_copy_deck
+        self.master_copy_deck = [item for item in self.master_copy_deck if item not in items_to_remove]
 
 
         self.hidden_deck = self.master_copy_deck.copy()
