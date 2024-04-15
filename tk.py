@@ -78,7 +78,7 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.14") #v0.0.14 4/14/2024
+        self.title("AwakeningTracker v0.0.14") #v0.0.14 4/15/2024
 
 
 
