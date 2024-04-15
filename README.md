@@ -73,5 +73,3 @@ Rotated in: Spark of Leadership, Recovery Drone, Explosive Entrance, Siege Machi
 
 4/12/2024 v0.0.13 Patch. Rotated out: Spark of Strength, Spark of Agility, Spark of Focus, Spark of Resilience, Spark of Leadership, Built Different, Stagger Swagger, Fight or Flight, Glass Cannon
 Rotated in: Reptile Remedy, Might of the Colossus, Rampage, Stinger, Adrenaline Rush, Stacks on Stacks, Peak Performance, Bulk Up, Reverberation
-
-4/15/2024 v0.0.14 shows what team you are on (first pick or second pick).
