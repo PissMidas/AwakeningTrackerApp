@@ -21,7 +21,7 @@ def time_ago(assigned_team_time):
     minutes_difference = int(time_difference.total_seconds() / 60)
 
     if minutes_difference == 0:
-        return "recently"
+        return "<1 min ago"
     elif minutes_difference == 1:
         return "1 minute ago"
     elif minutes_difference < 60:
@@ -99,7 +99,7 @@ class MainWindow(tk.Tk):
         self.iconbitmap(default = icon_path)
         self.wm_iconbitmap(icon_path)
         self.assigned_team_time = datetime.now()
-        self.assigned_team = "[NO TEAM FOUND!]"
+        self.assigned_team = "No game found"
     def build_image_cache(self):
         global image_cache
         for card_name in self.hidden_deck:
@@ -138,9 +138,9 @@ class MainWindow(tk.Tk):
 
         elif 'StreamTeamLevel' in message:
             if("NewTeam = EAssignedTeam::TeamOne" in message):
-                self.assigned_team = "team 1..."
+                self.assigned_team = "team 1"
             elif("NewTeam = EAssignedTeam::TeamTwo" in message):
-                self.assigned_team = "team 2..."
+                self.assigned_team = "team 2"
 
             self.assigned_team_time = datetime.now()
 
@@ -174,7 +174,15 @@ class MainWindow(tk.Tk):
             widget.destroy()
 
         # Display "Team Side" label
-        time_string = f"assigned to {self.assigned_team} {time_ago(self.assigned_team_time)}"
+        time_string = f"team pick order: no game found"
+
+        if ("team 1" in self.assigned_team):
+            time_string = f"your team has 1st pick...{time_ago(self.assigned_team_time)}"
+
+        elif ("team 2" in self.assigned_team):
+            time_string = f"your team has 2nd pick...{time_ago(self.assigned_team_time)}"
+
+
         teamside_label = tk.Label(self, text=time_string, font=("Helvetica", 14,"bold"))
         teamside_label.grid(row=0, column=0, columnspan=6)
         # Display "Hidden Cards" label
