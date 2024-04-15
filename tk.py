@@ -1,16 +1,35 @@
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 import os
 import re
 import sys
 import pygetwindow
 import time
+from datetime import datetime
 from PIL import Image, ImageTk
 
 #pyinstaller --onefile --icon=images/dubu.ico --add-data "images;images" --noconsole --name "AwakeningTracker" tk.py
 #command line to compile
+
+def time_ago(assigned_team_time):
+    current_time = datetime.now()
+    time_difference = current_time - assigned_team_time
+
+    # Get the time difference in minutes
+    minutes_difference = int(time_difference.total_seconds() / 60)
+
+    if minutes_difference == 0:
+        return "recently"
+    elif minutes_difference == 1:
+        return "1 minute ago"
+    elif minutes_difference < 60:
+        return f"{minutes_difference} minutes ago"
+    elif minutes_difference < 120:
+        return "1 hour ago"
+    else:
+        return f"{int(minutes_difference / 60)} hours ago"
 
 
 def resourcePath(relativePath):
@@ -31,6 +50,8 @@ class LogEventHandler(FileSystemEventHandler):
         self.log_file_path = log_file_path
         self.main_window = main_window
         self.file_size = 0
+    #    self.assigned_team_time = None
+    #    self.assigned_team = None
 
     def on_modified(self, event):
         if not event.is_directory and event.src_path == self.log_file_path:
@@ -48,7 +69,8 @@ class LogEventHandler(FileSystemEventHandler):
             # Process the new log messages
             log_lines = new_content.splitlines()
             for line in log_lines:
-                if 'Training Class' in line or 'Application Will Terminate' in line or 'PostGameCelebration' in line or 'EMatchPhase::VersusScreen' in line or 'EMatchPhase::Intermission' in line or 'EMatchPhase::ArenaOverview' in line or "Server Disconnect Reasons":
+
+                if 'StreamTeamLevel' in line or 'Training Class' in line or 'Application Will Terminate' in line or 'PostGameCelebration' in line or 'EMatchPhase::VersusScreen' in line or 'EMatchPhase::Intermission' in line or 'EMatchPhase::ArenaOverview' in line or "Server Disconnect Reasons":
                     #print(line) #USED FOR DEBUGGING
                     # Call the Tkinter event function here
                     self.main_window.event_function(line)
@@ -56,7 +78,7 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.13") #v0.0.13 4/12/2024
+        self.title("AwakeningTracker v0.0.14") #v0.0.14 4/14/2024
 
 
 
@@ -76,7 +98,8 @@ class MainWindow(tk.Tk):
         icon_path = resourcePath("images/dubu.ico")  # Replace with the actual path to your icon file
         self.iconbitmap(default = icon_path)
         self.wm_iconbitmap(icon_path)
-
+        self.assigned_team_time = datetime.now()
+        self.assigned_team = "[NO TEAM FOUND!]"
     def build_image_cache(self):
         global image_cache
         for card_name in self.hidden_deck:
@@ -113,6 +136,15 @@ class MainWindow(tk.Tk):
                         return
                     self.shown_deck.append(extracted_word)
 
+        elif 'StreamTeamLevel' in message:
+            if("NewTeam = EAssignedTeam::TeamOne" in message):
+                self.assigned_team = "team 1..."
+            elif("NewTeam = EAssignedTeam::TeamTwo" in message):
+                self.assigned_team = "team 2..."
+
+            self.assigned_team_time = datetime.now()
+
+
         elif 'Application Will Terminate' in message:
             print('GAME HAS EXITED, TERMINATING TRACKER APP')
             self.destroy()
@@ -128,26 +160,30 @@ class MainWindow(tk.Tk):
         self.hidden_deck = self.master_copy_deck.copy()
         self.shown_deck = []
 
-    def draw_cards(self,first_draw_flag=False):
+    def draw_cards(self, first_draw_flag=False):
         global image_cache  # Access the global image_cache variable
-        #self.after(200, self.update)
+        # self.after(200, self.update)
 
-        if(first_draw_flag==True):
-            #then we don't want to return! and draw the awakenings!
+        if first_draw_flag == True:
+            # then we don't want to return! and draw the awakenings!
             pass
-        elif(set(self.shown_deck_check_after_gui_updates) == set(self.shown_deck)):
+        elif set(self.shown_deck_check_after_gui_updates) == set(self.shown_deck):
             return
         # Clear the existing cards from the window
         for widget in self.winfo_children():
             widget.destroy()
 
+        # Display "Team Side" label
+        time_string = f"assigned to {self.assigned_team} {time_ago(self.assigned_team_time)}"
+        teamside_label = tk.Label(self, text=time_string, font=("Helvetica", 14,"bold"))
+        teamside_label.grid(row=0, column=0, columnspan=6)
         # Display "Hidden Cards" label
         hidden_label = tk.Label(self, text="Hidden Awakenings", font=("Helvetica", 16, "bold"))
-        hidden_label.grid(row=0, column=0, columnspan=6)
+        hidden_label.grid(row=1, column=0, columnspan=6)
 
         # Display hidden cards grid
         hidden_deck_cols = 0
-        hidden_deck_row = 1
+        hidden_deck_row = 2  # Updated row value
         for card_name in self.hidden_deck:
             image_path = resourcePath(f"images/{card_name}.png")
             photo = image_cache.get(image_path)
@@ -164,14 +200,13 @@ class MainWindow(tk.Tk):
         shown_label = tk.Label(self, text="Shown Awakenings", font=("Helvetica", 16, "bold"))
         shown_label.grid(row=hidden_deck_row + 1, column=0, columnspan=6)
 
-        total_rows = hidden_deck_row + (len(self.shown_deck) // 6) + 1
-        shown_deck_row = hidden_deck_row + 2
+        total_rows = hidden_deck_row + (len(self.shown_deck) // 6) + 2  # Updated row value
+        shown_deck_row = hidden_deck_row + 3  # Updated row value
 
         shown_deck_cols = 0
         for card_name in self.shown_deck:
             image_path = resourcePath(f"images/{card_name}.png")
             photo = image_cache.get(image_path)
-
 
             label = tk.Label(self, image=photo)
             label.grid(row=shown_deck_row, column=shown_deck_cols % 6, padx=0, pady=0)
