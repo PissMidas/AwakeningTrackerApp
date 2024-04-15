@@ -30,6 +30,7 @@ these instructions are for either:
    and then press enter.
 6. i recommend disabling the 'check if omega strikers is open' code if you want to test simple changes.
 
+7. version info: python 3.11.3,  pyinstaller 5.5 
 If you are trying to develop software to be used alongside the game, dm me. I love hearing about new projects, even if it's just in the planning stages!
 
 ### Version history
@@ -70,3 +71,5 @@ Rotated in: Spark of Leadership, Recovery Drone, Explosive Entrance, Siege Machi
 
 4/12/2024 v0.0.13 Patch. Rotated out: Spark of Strength, Spark of Agility, Spark of Focus, Spark of Resilience, Spark of Leadership, Built Different, Stagger Swagger, Fight or Flight, Glass Cannon
 Rotated in: Reptile Remedy, Might of the Colossus, Rampage, Stinger, Adrenaline Rush, Stacks on Stacks, Peak Performance, Bulk Up, Reverberation
+
+4/14/2024 v0.0.14 shows what team you are on (first pick or second pick).
