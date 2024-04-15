@@ -178,7 +178,7 @@ class MainWindow(tk.Tk):
 
         # Display "Team Side" label
         time_string = f"player has been assigned to {self.assigned_team} {time_ago(self.assigned_team_time)}"
-        teamside_label = tk.Label(self, text=time_string, font=("Helvetica", 12))
+        teamside_label = tk.Label(self, text=time_string, font=("Helvetica", 14))
         teamside_label.grid(row=0, column=0, columnspan=6)
 
         # Display "Hidden Cards" label
