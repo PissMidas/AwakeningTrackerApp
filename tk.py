@@ -1,4 +1,3 @@
-
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import tkinter as tk
@@ -12,10 +11,12 @@ from datetime import datetime
 from PIL import Image, ImageTk
 
 #pyinstaller --onefile --icon=images/dubu.ico --add-data "images;images" --noconsole --name "AwakeningTracker" tk.py
-
+#command line to compile
 
 #pyinstaller --onedir --icon=images/dubu.ico --add-data "images;images" --noconsole --name "AwakeningTracker" tk.py
-#above are seperate but similar command lines to compile. --onedir tends to not be a problem for antivirus software.
+#alternative command line to compile. (antivirus less likely to have a false positive)
+
+
 
 def time_ago(assigned_team_time):
     current_time = datetime.now()
@@ -28,6 +29,8 @@ def time_ago(assigned_team_time):
         return "<1 min ago"
     elif minutes_difference == 1:
         return "1 min ago"
+    elif minutes_difference < 60:
+        return f"{minutes_difference} mins ago"
     elif minutes_difference < 120:
         return f"{minutes_difference} mins ago"
     else:
@@ -101,7 +104,7 @@ class MainWindow(tk.Tk):
         self.iconbitmap(default = icon_path)
         self.wm_iconbitmap(icon_path)
         self.assigned_team_time = datetime.now()
-        self.assigned_team = "No game found"
+        self.assigned_team = "[NO TEAM FOUND]"
     def build_image_cache(self):
         global image_cache
         for card_name in self.hidden_deck:
@@ -176,13 +179,13 @@ class MainWindow(tk.Tk):
             widget.destroy()
 
         # Display "Team Side" label
-        time_string = f"team pick order: no game found"
+        time_string = f"game not found"
 
-        if ("team 1" in self.assigned_team):
-            time_string = f"your team has 1st pick...{time_ago(self.assigned_team_time)}"
 
-        elif ("team 2" in self.assigned_team):
-            time_string = f"your team has 2nd pick...{time_ago(self.assigned_team_time)}"
+        if "team 1" in self.assigned_team:
+                time_string = f"your team is first pick...{time_ago(self.assigned_team_time)}"
+        elif "team 2" in self.assigned_team:
+                time_string = f"your team is second pick...{time_ago(self.assigned_team_time)}"
 
 
         teamside_label = tk.Label(self, text=time_string, font=("Helvetica", 14,"bold"))
@@ -267,3 +270,4 @@ time.sleep(1)
 observer.start()
 time.sleep(1)
 # Start the Tkinter event loop
+window.mainloop()
