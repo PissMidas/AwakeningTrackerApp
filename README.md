@@ -30,7 +30,7 @@ these instructions are for either:
    and then press enter.
 6. i recommend disabling the 'check if omega strikers is open' code if you want to test simple changes.
 
-7. version info: python 3.11.3,  pyinstaller 5.5
+7. version info: python 3.11.3,  pyinstaller 6.6
 
    
 If you are trying to develop software to be used alongside the game, dm me. I love hearing about new projects, even if it's just in the planning stages!
