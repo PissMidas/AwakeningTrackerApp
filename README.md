@@ -75,3 +75,7 @@ Rotated in: Spark of Leadership, Recovery Drone, Explosive Entrance, Siege Machi
 Rotated in: Reptile Remedy, Might of the Colossus, Rampage, Stinger, Adrenaline Rush, Stacks on Stacks, Peak Performance, Bulk Up, Reverberation
 
 4/16/2024 v0.0.14. now can see which team has first pick. (ody has said it's okay).
+
+5/9/2024 v0.0.15. 
+Rotated OUT: Knife's Edge, Demolitionist, Timeless Creator
+Rotated IN: Orb Dancer, Orb Ponderer, Catalyst
