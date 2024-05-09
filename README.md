@@ -21,7 +21,7 @@ these instructions are for either:
 -etc.
 
 1. download this repo (the 'images' folder, and the file 'tk.py'. keep the structure the same as you see it in this repo)
-2. pip install the relevant libraries (whatever warnings that pop up)
+2. install python 3 (and add python to PATH. this is a box you should set to true during the installation). then once python is installed, run the command prompt. within the command prompt navigate to the files you have downloaded (images and tk.py), then pip install (ex 'pip install pillow', etc.) the relevant libraries (whatever warnings that pop up when you try to run 'python tk.py')
 3. go to your local folder via the command prompt. if you do not want to compile, then simply type 'python tk.py' and press enter.
 4. if you want to compile the app into a single executable file, type
    
