@@ -21,14 +21,16 @@ these instructions are for either:
 -etc.
 
 1. download this repo (the 'images' folder, and the file 'tk.py'. keep the structure the same as you see it in this repo)
-2. install python 3 (and add python to PATH. this is a box you should set to true during the installation). then once python is installed, run the command prompt. within the command prompt navigate to the files you have downloaded (images and tk.py), then pip install (ex 'pip install pillow', etc.) the relevant libraries (whatever warnings that pop up when you try to run 'python tk.py')
-3. go to your local folder via the command prompt. if you do not want to compile, then simply type 'python tk.py' and press enter.
-4. if you want to compile the app into a single executable file, type
+2. install python 3 (and add python to PATH. this is a box you should set to true during the installation).
+3. go to your local folder where the files you have downloaded (images and tk.py) via the command prompt. pip install the necessary libraries (ex run 'pip install pillow', etc. pip install all the appropriate libraries, whatever errors that come up when you try to run 'python tk.py' in the command prompt).
+4. if you want to compile the app into a single executable file , type
    
    pyinstaller --onefile --icon=images/dubu.ico --add-data "images;images" --noconsole --name "AwakeningTracker" tk.py
 
    and then press enter.
-6. i recommend disabling the 'check if omega strikers is open' code if you want to test simple changes.
+
+5. alternatively, if you do not want to compile, then simply type 'python tk.py' and press enter and the program will run
+6. i recommend disabling the 'check if omega strikers is open' code if you want to test simple changes. (this is if you want to develop an app)
 
 7. version info: python 3.11.3,  pyinstaller 6.6 (use these versions if something goes wrong, most python 3 versions should work, and most pyinstaller versions should work)
 
