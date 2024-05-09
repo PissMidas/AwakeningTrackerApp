@@ -83,13 +83,15 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.14") #v0.0.14 4/16/2024
+        self.title("AwakeningTracker v0.0.15") #v0.0.14 5/9/2024
 
 
 
         self.master_copy_deck = ['TD_AvoidDamageHitHarder', 'TD_BarrierBuff', 'TD_BaseStaggerAndRegen', 'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_BuffAndDebuffDuration', 'TD_ComboATarget', 'TD_CreationSize', 'TD_CreationSizeLifeTime', 'TD_DistancePower', 'TD_EdgePower', 'TD_EmpoweredHitsBuff', 'TD_EnergyCatalyst', 'TD_EnergyConversion', 'TD_EnergyDischarge', 'TD_EnhancedOrbsCooldown', 'TD_EnhancedOrbsSpeed', 'TD_FasterDashes', 'TD_FasterDashes2', 'TD_FasterDashes3', 'TD_FasterProjectiles', 'TD_FasterProjectiles2', 'TD_FasterProjectiles3', 'TD_HitAnythingRestoreStagger', 'TD_HitEnemyBurnThem', 'TD_HitRockCooldown', 'TD_HitsIncreaseSpeedAndPower', 'TD_HitSpeed', 'TD_HitsReduceCooldowns', 'TD_IncreasedSpeedWithStagger', 'TD_KOKing', 'TD_MovementAbilityCharges', 'TD_MultiHitsReduceCooldowns', 'TD_OrbShare', 'TD_PrimaryAbilityCooldownReduction', 'TD_PrimaryEcho', 'TD_ResistFirstHit', 'TD_Revive', 'TD_ShrinkSelfGrowAllies', 'TD_SizeIncrease', 'TD_SizeIncrease2', 'TD_SizePowerConversion', 'TD_SpecialCooldownAfterRounds', 'TD_StackingSize', 'TD_StaggerCooldownRateConversion', 'TD_StaggerPowerConversion', 'TD_StaggerSpeedConversion', 'TD_StrikeCooldownReduction', 'TD_StrikeRockTowardsAllies', 'TD_TakeDownReduceCooldowns']
         # List of items to remove
-        items_to_remove = ['TD_AvoidDamageHitHarder', 'TD_SizeIncrease2', 'TD_SizeIncrease', 'TD_EnergyCatalyst', 'TD_EnergyConversion', 'TD_HitSpeed', 'TD_EnergyDischarge', 'TD_EnhancedOrbsSpeed', 'TD_EnhancedOrbsCooldown', 'TD_OrbShare','TD_HitsReduceCooldowns','TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_FasterDashes', 'TD_HitAnythingRestoreStagger']
+
+
+        items_to_remove = ['TD_EdgePower', 'TD_BarrierBuff', 'TD_CreationSizeLifeTime', 'TD_AvoidDamageHitHarder', 'TD_SizeIncrease2', 'TD_SizeIncrease', 'TD_EnergyConversion', 'TD_HitSpeed', 'TD_EnergyDischarge', 'TD_OrbShare','TD_HitsReduceCooldowns','TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_FasterDashes', 'TD_HitAnythingRestoreStagger']
 
     # Remove items from self.master_copy_deck
         self.master_copy_deck = [item for item in self.master_copy_deck if item not in items_to_remove]
