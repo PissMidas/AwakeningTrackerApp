@@ -7,7 +7,6 @@ import re
 import sys
 import pygetwindow
 import time
-from datetime import datetime
 from PIL import Image, ImageTk
 
 #pyinstaller --onefile --icon=images/dubu.ico --add-data "images;images" --noconsole --name "AwakeningTracker" tk.py
@@ -17,24 +16,6 @@ from PIL import Image, ImageTk
 #alternative command line to compile. (antivirus less likely to have a false positive)
 
 
-
-def time_ago(assigned_team_time):
-    current_time = datetime.now()
-    time_difference = current_time - assigned_team_time
-
-    # Get the time difference in minutes
-    minutes_difference = int(time_difference.total_seconds() / 60)
-
-    if minutes_difference == 0:
-        return "<1 min ago"
-    elif minutes_difference == 1:
-        return "1 min ago"
-    elif minutes_difference < 60:
-        return f"{minutes_difference} mins ago"
-    elif minutes_difference < 120:
-        return f"{minutes_difference} mins ago"
-    else:
-        return f"{int(minutes_difference / 60)} hours ago"
 
 
 def resourcePath(relativePath):
@@ -83,15 +64,21 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.15") #v0.0.14 5/9/2024
+        self.title("AwakeningTracker v0.0.16") #v0.0.16 7/11/2024
 
 
 
         self.master_copy_deck = ['TD_AvoidDamageHitHarder', 'TD_BarrierBuff', 'TD_BaseStaggerAndRegen', 'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_BuffAndDebuffDuration', 'TD_ComboATarget', 'TD_CreationSize', 'TD_CreationSizeLifeTime', 'TD_DistancePower', 'TD_EdgePower', 'TD_EmpoweredHitsBuff', 'TD_EnergyCatalyst', 'TD_EnergyConversion', 'TD_EnergyDischarge', 'TD_EnhancedOrbsCooldown', 'TD_EnhancedOrbsSpeed', 'TD_FasterDashes', 'TD_FasterDashes2', 'TD_FasterDashes3', 'TD_FasterProjectiles', 'TD_FasterProjectiles2', 'TD_FasterProjectiles3', 'TD_HitAnythingRestoreStagger', 'TD_HitEnemyBurnThem', 'TD_HitRockCooldown', 'TD_HitsIncreaseSpeedAndPower', 'TD_HitSpeed', 'TD_HitsReduceCooldowns', 'TD_IncreasedSpeedWithStagger', 'TD_KOKing', 'TD_MovementAbilityCharges', 'TD_MultiHitsReduceCooldowns', 'TD_OrbShare', 'TD_PrimaryAbilityCooldownReduction', 'TD_PrimaryEcho', 'TD_ResistFirstHit', 'TD_Revive', 'TD_ShrinkSelfGrowAllies', 'TD_SizeIncrease', 'TD_SizeIncrease2', 'TD_SizePowerConversion', 'TD_SpecialCooldownAfterRounds', 'TD_StackingSize', 'TD_StaggerCooldownRateConversion', 'TD_StaggerPowerConversion', 'TD_StaggerSpeedConversion', 'TD_StrikeCooldownReduction', 'TD_StrikeRockTowardsAllies', 'TD_TakeDownReduceCooldowns']
+
+
         # List of items to remove
-
-
-        items_to_remove = ['TD_EdgePower', 'TD_BarrierBuff', 'TD_CreationSizeLifeTime', 'TD_AvoidDamageHitHarder', 'TD_SizeIncrease2', 'TD_SizeIncrease', 'TD_EnergyConversion', 'TD_HitSpeed', 'TD_EnergyDischarge', 'TD_OrbShare','TD_HitsReduceCooldowns','TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed', 'TD_IncreasedSpeedWithStagger', 'TD_FasterDashes', 'TD_HitAnythingRestoreStagger']
+        items_to_remove = ['TD_EdgePower', 'TD_BarrierBuff', 'TD_CreationSizeLifeTime',
+          'TD_SizeIncrease', 'TD_EnergyConversion',
+         'TD_HitSpeed', 'TD_EnergyDischarge', 'TD_OrbShare',
+         'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed',
+         'TD_IncreasedSpeedWithStagger', 'TD_FasterDashes', 'TD_HitAnythingRestoreStagger',
+         'TD_EmpoweredHitsBuff', 'TD_Revive', 'TD_ShrinkSelfGrowAllies'
+         ]
 
     # Remove items from self.master_copy_deck
         self.master_copy_deck = [item for item in self.master_copy_deck if item not in items_to_remove]
@@ -105,8 +92,6 @@ class MainWindow(tk.Tk):
         icon_path = resourcePath("images/dubu.ico")  # Replace with the actual path to your icon file
         self.iconbitmap(default = icon_path)
         self.wm_iconbitmap(icon_path)
-        self.assigned_team_time = datetime.now()
-        self.assigned_team = "[NO TEAM FOUND]"
     def build_image_cache(self):
         global image_cache
         for card_name in self.hidden_deck:
@@ -143,13 +128,6 @@ class MainWindow(tk.Tk):
                         return
                     self.shown_deck.append(extracted_word)
 
-        elif 'StreamTeamLevel' in message:
-            if("NewTeam = EAssignedTeam::TeamOne" in message):
-                self.assigned_team = "team 1"
-            elif("NewTeam = EAssignedTeam::TeamTwo" in message):
-                self.assigned_team = "team 2"
-
-            self.assigned_team_time = datetime.now()
 
 
         elif 'Application Will Terminate' in message:
@@ -180,25 +158,15 @@ class MainWindow(tk.Tk):
         for widget in self.winfo_children():
             widget.destroy()
 
-        # Display "Team Side" label
-        time_string = f"game not found"
 
 
-        if "team 1" in self.assigned_team:
-                time_string = f"your team is first pick...{time_ago(self.assigned_team_time)}"
-        elif "team 2" in self.assigned_team:
-                time_string = f"your team is second pick...{time_ago(self.assigned_team_time)}"
 
-
-        teamside_label = tk.Label(self, text=time_string, font=("Helvetica", 14,"bold"))
-        teamside_label.grid(row=0, column=0, columnspan=6)
-        # Display "Hidden Cards" label
         hidden_label = tk.Label(self, text="Hidden Awakenings", font=("Helvetica", 16, "bold"))
-        hidden_label.grid(row=1, column=0, columnspan=6)
+        hidden_label.grid(row=0, column=0, columnspan=6)
 
         # Display hidden cards grid
         hidden_deck_cols = 0
-        hidden_deck_row = 2  # Updated row value
+        hidden_deck_row = 1  # Updated row value
         for card_name in self.hidden_deck:
             image_path = resourcePath(f"images/{card_name}.png")
             photo = image_cache.get(image_path)
@@ -215,8 +183,8 @@ class MainWindow(tk.Tk):
         shown_label = tk.Label(self, text="Shown Awakenings", font=("Helvetica", 16, "bold"))
         shown_label.grid(row=hidden_deck_row + 1, column=0, columnspan=6)
 
-        total_rows = hidden_deck_row + (len(self.shown_deck) // 6) + 2  # Updated row value
-        shown_deck_row = hidden_deck_row + 3  # Updated row value
+        total_rows = hidden_deck_row + (len(self.shown_deck) // 6) + 1  # Updated row value
+        shown_deck_row = hidden_deck_row + 2  # Updated row value
 
         shown_deck_cols = 0
         for card_name in self.shown_deck:
