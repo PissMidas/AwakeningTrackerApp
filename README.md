@@ -81,3 +81,7 @@ Rotated in: Reptile Remedy, Might of the Colossus, Rampage, Stinger, Adrenaline 
 5/9/2024 v0.0.15. 
 Rotated OUT: Knife's Edge, Demolitionist, Timeless Creator
 Rotated IN: Orb Dancer, Orb Ponderer, Catalyst
+
+7/11/2024 v0.0.16
+Rotated OUT: Among Titans, Recovery Drone, Specialized Training
+Rotated IN: Big Fish, Glass Cannon, Perfect Form
