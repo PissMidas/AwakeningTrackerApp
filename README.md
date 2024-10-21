@@ -90,3 +90,5 @@ Rotated IN: Big Fish, Glass Cannon, Perfect Form
 Rotated OUT: Heavy impact, Bulk Up, Stinger, Reptile Remedy, Quick Strikes,Peak Performance, Reverberation, Glass Cannon, Might of the Colossus, Orb Ponderer, Orb Dancer
 Rotated IN: Stagger Swagger, Built Different, Timeless Creator, Egoist, Fight or Flight, Super Surge, Spark of Agility, Spark of Focus, Spark of Resilience, Spark of Strength, Knife's Edge
 
+I've made some changes that makes it so that I no longer have to manually update this app manually whenever there is an awakening rotation.
+If something breaks or is not working, dm me on discord.
