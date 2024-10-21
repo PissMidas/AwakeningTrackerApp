@@ -64,7 +64,7 @@ class LogEventHandler(FileSystemEventHandler):
 class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AwakeningTracker v0.0.16") #v0.0.16 7/11/2024
+        self.title("AwakeningTracker v0.0.17") #v0.0.17 10/14/2024
 
 
 
@@ -72,12 +72,15 @@ class MainWindow(tk.Tk):
 
 
         # List of items to remove
-        items_to_remove = ['TD_EdgePower', 'TD_BarrierBuff', 'TD_CreationSizeLifeTime',
-          'TD_SizeIncrease', 'TD_EnergyConversion',
-         'TD_HitSpeed', 'TD_EnergyDischarge', 'TD_OrbShare',
-         'TD_BlessingCooldownRate', 'TD_BlessingMaxStagger', 'TD_BlessingPower', 'TD_BlessingShare', 'TD_BlessingSpeed',
-         'TD_IncreasedSpeedWithStagger', 'TD_FasterDashes', 'TD_HitAnythingRestoreStagger',
-         'TD_EmpoweredHitsBuff', 'TD_Revive', 'TD_ShrinkSelfGrowAllies'
+        #
+
+        items_to_remove = [
+        'TD_ShrinkSelfGrowAllies', 'TD_StaggerPowerConversion', 'TD_BarrierBuff',
+        'TD_EnergyDischarge','TD_AvoidDamageHitHarder', 'TD_MultiHitsReduceCooldowns',
+        'TD_SizePowerConversion', 'TD_EnhancedOrbsSpeed', 'TD_EnhancedOrbsCooldown', 'TD_OrbShare',
+        'TD_StaggerSpeedConversion', 'TD_StrikeCooldownReduction', 'TD_Revive',
+        'TD_BaseStaggerAndRegen', 'TD_StaggerCooldownRateConversion', 'TD_BlessingShare',
+        'TD_EmpoweredHitsBuff', 'TD_HitEnemyBurnThem', 'TD_HitAnythingRestoreStagger'
          ]
 
     # Remove items from self.master_copy_deck
