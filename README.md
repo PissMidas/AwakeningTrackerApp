@@ -85,3 +85,8 @@ Rotated IN: Orb Dancer, Orb Ponderer, Catalyst
 7/11/2024 v0.0.16
 Rotated OUT: Among Titans, Recovery Drone, Specialized Training
 Rotated IN: Big Fish, Glass Cannon, Perfect Form
+
+10/21/2024 v0.0.17
+Rotated OUT: Heavy impact, Bulk Up, Stinger, Reptile Remedy, Quick Strikes,Peak Performance, Reverberation, Glass Cannon, Might of the Colossus, Orb Ponderer, Orb Dancer
+Rotated IN: Stagger Swagger, Built Different, Timeless Creator, Egoist, Fight or Flight, Super Surge, Spark of Agility, Spark of Focus, Spark of Resilience, Spark of Strength, Knife's Edge
+
