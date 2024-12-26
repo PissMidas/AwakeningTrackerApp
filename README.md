@@ -92,3 +92,7 @@ Rotated IN: Stagger Swagger, Built Different, Timeless Creator, Egoist, Fight or
 
 I've made some changes that makes it so that I no longer have to manually update this app manually whenever there is an awakening rotation.
 If something breaks or is not working, dm me on discord.
+
+12/25/2024 v0.0.18
+fixed an error; the discord integration feature came with new logs, and this app didn't handle it well. specifically, it did not like reading non english characters.
+If something breaks or is not working, dm me on discord.
