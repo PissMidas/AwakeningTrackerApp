@@ -95,4 +95,7 @@ If something breaks or is not working, dm me on discord.
 
 12/25/2024 v0.0.18
 fixed an error; the discord integration feature came with new logs, and this app didn't handle it well. specifically, it did not like reading non english characters.
+
+3/30/2026 v0.0.19
+Update because new awakenings were added to the game somewhat recently. If new awakenings are added to the game, I will have to update the app again.
 If something breaks or is not working, dm me on discord.
